@@ -101,5 +101,6 @@ Select maavar, COUNT(*)FROM shopping GROUP BY maavar
 This line shows the values in the column we selected, and the number of rows that have those values.
 
 # 16
+SELECT id AS "SECRET", name, amount, maavar FROM shopping
 This line renames the column and shows the selected columns from the table
 
