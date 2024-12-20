@@ -1,0 +1,105 @@
+# 1
+CREATE TABLE shopping (id INTEGER PRIMARY KEY, name TEXT, amount
+INTEGER);
+DROP TABLE shopping
+The first line creates a table, called shopping and adds rows named 'id', 'name', 'amount', the second row
+deletes the entire table we've created from the database.
+
+# 2
+ALTER table shopping RENAME to shopp
+ALTER table shopp RENAME to shopping
+The action ALTER makes it easy for us to change the table without deleting the table and recreating it.
+Rename changes the name of the table.
+
+# 3
+INSERT INTO shopping VALUES (1, 'Avokado', 5);
+INSERT INTO shopping VALUES (2, 'Milk', 2);
+INSERT INTO shopping VALUES (3, 'Bread', 3);
+INSERT INTO shopping VALUES (4, 'Chocolate', 8);
+INSERT INTO shopping VALUES (5, 'Bamba', 5);
+INSERT INTO shopping VALUES (6, 'Orange', 10);
+This actions, insert the values we want according to the places we want them that means that if i want
+to insert something to the first key which is id, i'll put it in the first place.
+
+# 4
+select * from shopping
+The action select * brings all the columns from the table, and shows the entire table.
+
+# 5
+SELECT id, name FROM shopping
+This action brings just the specified keys from the table, in this case, it brings just the id and
+the name from the shopping table.
+
+# 6
+SELECT * FROM shopping WHERE amount > 5
+SELECT * FROM shopping WHERE amount = 2
+SELECT * FROM shopping WHERE name LIKE 'Bamba'
+The first line, checks the entire table and shows the rows in which the amount is larger
+than 5.
+The second line checks the entire table and shows the rows in which the amount is equal to 2.
+the third line checks the entire table and shows the rows in which the key name is 'Bamba'.
+
+# 7
+DELETE from shopping WHERE name like 'Orange';
+This action deletes the row of said item, based on the key.
+
+# 8
+UPDATE shopping SET name = 'Bisli' WHERE name LIKE 'Bamba'
+UPDATE shopping SET amount=1 WHERE name LIKE 'Milk'
+The first line, changes the name of the key to another name that we decided.
+The second line changes the amount to the amount we decide based on the name.
+SET changes one of the keys based on a key that we decide'.
+
+# 9
+ALTER TABLE shopping ADD COLUMN maavar
+This action adds a column named whatever we want it to be named.
+
+# 10
+UPDATE shopping SET maavar=6 WHERE id=1;
+UPDATE shopping SET maavar=3 WHERE id=2;
+UPDATE shopping SET maavar=12 WHERE id=3;
+UPDATE shopping SET maavar=8 WHERE id=4;
+UPDATE shopping SET maavar=5 WHERE id=5;
+This action updates the new column we added by assigning values to the rows based on the key we decided on.
+
+# 11
+SELECT * FROM shopping WHERE amount > 1 AND maavar > 5
+This action filters the rows so that we only get the rows where both conditions are met.
+SELECT * FROM shopping WHERE maavar BETWEEN 3 AND 5
+This action filters the rows based on the range specified for the column we asked.
+
+# 12
+SELECT * FROM shopping ORDER BY maavar
+This action sorts the table by the specified key in ascending order .
+SELECT * FROM shopping ORDER BY maavar DESC
+This action sorts the table by the specified key in a descending order .
+
+# 13
+CREATE TABLE books (id INTEGER PRIMARY KEY, name TEXT);
+This line creates a new table with the columns we assigned.
+INSERT INTO books VALUES (1, 'SQL PROGRAMMING');
+INSERT INTO books VALUES (2, 'CSHARP PROGRAMMING');
+This lines insert the values we want according to the places we want them.
+DELETE FROM books;
+This line deletes all the data we’ve inserted into the table.
+
+# 14
+SELECT COUNT(*)from shopping
+This line shows how many rows we have in our table.
+SELECT MAX(amount) from shopping
+This line shows the highest value in the column we decided on.
+SELECT AVG(amount) from shopping
+This line shows the average of all the values on the column we decided on.
+SELECT MIN(amount) from shopping
+This line shows the lowest value in the column we decided on.
+
+# 15
+INSERT INTO shopping VALUES (6, 'Onions', 3, 6);
+INSERT INTO shopping VALUES (7, 'Orio', 1, 8);
+This actions, insert the values we want according to the places we want them.
+Select maavar, COUNT(*)FROM shopping GROUP BY maavar
+This line shows the values in the column we selected, and the number of rows that have those values.
+
+# 16
+This line renames the column and shows the selected columns from the table
+
